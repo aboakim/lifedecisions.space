@@ -69,7 +69,7 @@ const hy: PricingCopy = {
   freePrice: "0",
   freeDesc: "Սկսելու համար",
   freeBullets: [
-    "Վերլուծություն՝ 5 եզակի այցելուց հետո",
+    "Անսահմանափակ անվճար վերլուծություն այս սարքում",
     "Մասնագետների ցանցում դիտում",
     "Գաղտնիության հիմնական շերտ",
   ],
@@ -116,7 +116,7 @@ const hy: PricingCopy = {
     "Կյանքի որոշումների AI — կայացրո՛ր լավ որոշումներ րոպեների մեջ",
   packageModalTitle: "Ընտրեք փաթեթը վերլուծությունից առաջ",
   packageModalLead:
-    "Անվճար՝ կիսվեք 5 հոգու հետ։ Premium՝ գնեք կամ կիսվեք 20 հոգու հետ։",
+    "Անվճար փաթեթը բաց է այս սարքում առանց կիսման։ Premium՝ գնեք կամ կիսվեք 20 հոգու հետ։",
   shareUnlockFreeTitle: "Կիսվեք 5 հոգու հետ՝ անվճար վերլուծության համար",
   shareUnlockFreeLead:
     "Ուղարկեք ձեր անձնական հղումը ընկերներին։ Երբ 5 տարբեր մարդ բացեն այն, անվճար վերլուծությունը կբացվի։",
@@ -141,7 +141,7 @@ const en: PricingCopy = {
   freePrice: "0",
   freeDesc: "Get started",
   freeBullets: [
-    "Analysis after 5 unique visitors via your link",
+    "Free analysis on this device — no sharing required",
     "Browse the expert network",
     "Core privacy messaging",
   ],
@@ -188,7 +188,7 @@ const en: PricingCopy = {
     "Life Decision Engine — Stop overthinking. Decide in seconds.",
   packageModalTitle: "Choose a package before analysis",
   packageModalLead:
-    "Free requires sharing with 5 people. Premium: subscribe or share with 20.",
+    "Free is open on this device with no sharing. Premium: subscribe or share with 20.",
   shareUnlockFreeTitle: "Share with 5 people to unlock free analysis",
   shareUnlockFreeLead:
     "Send your personal link to friends. When 5 different people open it, free analysis unlocks.",

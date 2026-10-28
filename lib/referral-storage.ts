@@ -35,6 +35,15 @@ export function getLocalFreeUnlocked(): boolean {
   }
 }
 
+/** Free package — unlock on this device with no share requirement. */
+export function grantLocalFreeUnlocked(): void {
+  try {
+    localStorage.setItem(FREE_KEY, "1");
+  } catch {
+    /* ignore */
+  }
+}
+
 export function getLocalPremiumUnlocked(): boolean {
   try {
     return localStorage.getItem(PREMIUM_KEY) === "1";

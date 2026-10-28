@@ -83,18 +83,9 @@ export function monetagExtraZones(): string[] {
   return [...DEFAULT_EXTRA_ZONES];
 }
 
-/** Master switch — set to "0" to disable all Monetag. */
+/** Master switch — Monetag removed from the product (always off). */
 export function monetagEnabled(): boolean {
-  const flag = process.env.NEXT_PUBLIC_MONETAG_ENABLED?.trim();
-  if (flag === "0" || flag === "false") return false;
-  return Boolean(
-    monetagInPageZone() ||
-      monetagVignetteZone() ||
-      monetagMultitagZone() ||
-      monetagClassicPushZone() ||
-      monetagOnclickPopunderZone() ||
-      monetagExtraZones().length > 0,
-  );
+  return false;
 }
 
 /** Sensitive surfaces only — Monetag runs on all other public pages (incl. /analyze). */

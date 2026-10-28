@@ -179,7 +179,7 @@ export default async function RootLayout({
       <head>
         {/*
           Consent Mode v2: denied in GDPR/UK (unknown country too);
-          granted elsewhere (e.g. US) so AdSense/Monetag can fill without
+          granted elsewhere (e.g. US) so AdSense can fill without
           waiting on Accept. Users can still Reject via the banner / footer.
         */}
         <script
@@ -198,7 +198,7 @@ export default async function RootLayout({
           Site-wide AdSense bootstrap (matches AdSense → Verify code snippet).
           lazyOnload: after load + idle-friendly; Consent default in <head>
           runs first. ensureAdsbygoogleScript skips if this tag already exists.
-          Monetag: MonetagLoader after consent on public pages (not /admin|/api|/experts/register).
+          Monetag disabled — MonetagLoader only unregisters leftover push SWs.
         */}
         <Script
           id="adsense-adsbygoogle"

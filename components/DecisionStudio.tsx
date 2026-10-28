@@ -80,11 +80,8 @@ import ReadAloudReportButton from "@/components/home/ReadAloudReportButton";
 import AnalyzePackageModal from "@/components/home/AnalyzePackageModal";
 import ShareToUnlockModal from "@/components/home/ShareToUnlockModal";
 import {
-  fetchReferralStatus,
-  getLocalFreeUnlocked,
-  getLocalPremiumUnlocked,
   getStoredReferralCode,
-  isAnalyzeEntitledLocally,
+  grantLocalFreeUnlocked,
 } from "@/lib/referral-storage";
 import { PACKAGE_GATE_EVENT } from "@/lib/referral-shared";
 
@@ -541,36 +538,27 @@ export default function DecisionStudio({
     };
   }, [focusLayout, skipHero]);
 
-  /** /analyze or ?package=1: open package gate unless already unlocked. */
+  /** Free package is open on this device — no share gate. */
   useEffect(() => {
-    let cancelled = false;
+    grantLocalFreeUnlocked();
+  }, []);
+
+  /** /analyze or ?package=1: scroll to analyzer (free is already local-unlocked). */
+  useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const forcePackage = params.get("package") === "1";
     if (!focusLayout && !forcePackage) return;
 
-    void (async () => {
-      const status = await fetchReferralStatus();
-      if (cancelled) return;
-      const entitled =
-        Boolean(status?.freeUnlocked) ||
-        Boolean(status?.premiumUnlocked) ||
-        isAnalyzeEntitledLocally();
-      if (entitled) {
-        if (focusLayout || forcePackage) {
-          window.setTimeout(() => {
-            document
-              .getElementById("section-workspace")
-              ?.scrollIntoView({ block: "start" });
-            document
-              .getElementById("decision-input")
-              ?.focus({ preventScroll: true });
-          }, 80);
-        }
-        return;
-      }
-      unlockIntentRef.current = "scroll";
-      setPackageModalOpen(true);
-    })();
+    if (focusLayout || forcePackage) {
+      window.setTimeout(() => {
+        document
+          .getElementById("section-workspace")
+          ?.scrollIntoView({ block: "start" });
+        document
+          .getElementById("decision-input")
+          ?.focus({ preventScroll: true });
+      }, 80);
+    }
 
     if (forcePackage) {
       params.delete("package");
@@ -578,10 +566,6 @@ export default function DecisionStudio({
       const path = window.location.pathname;
       window.history.replaceState({}, "", q ? `${path}?${q}` : path);
     }
-
-    return () => {
-      cancelled = true;
-    };
   }, [focusLayout]);
 
   useEffect(() => {
@@ -814,23 +798,12 @@ export default function DecisionStudio({
     e.preventDefault();
     if (!canSubmit) return;
     unlockIntentRef.current = "run";
-    void (async () => {
-      const status = await fetchReferralStatus();
-      const entitled =
-        Boolean(status?.freeUnlocked) ||
-        Boolean(status?.premiumUnlocked) ||
-        getLocalFreeUnlocked() ||
-        getLocalPremiumUnlocked();
-      if (!entitled) {
-        setPackageModalOpen(true);
-        return;
-      }
-      if (!getStoredSubscriberId()) {
-        setPreAnalysisEmailOpen(true);
-        return;
-      }
-      void runAnalysis();
-    })();
+    grantLocalFreeUnlocked();
+    if (!getStoredSubscriberId()) {
+      setPreAnalysisEmailOpen(true);
+      return;
+    }
+    void runAnalysis();
   }
 
   const a = result?.analysis;
@@ -945,26 +918,20 @@ export default function DecisionStudio({
   useEffect(() => {
     function onGate() {
       unlockIntentRef.current = "scroll";
-      if (isAnalyzeEntitledLocally()) {
-        scrollToAnalyzer();
-        return;
-      }
-      setPackageModalOpen(true);
+      grantLocalFreeUnlocked();
+      scrollToAnalyzer();
     }
     window.addEventListener(PACKAGE_GATE_EVENT, onGate);
     return () => window.removeEventListener(PACKAGE_GATE_EVENT, onGate);
   }, [scrollToAnalyzer]);
 
-  /** Open package picker first; only scroll if already unlocked. */
+  /** Free is open on-device — CTA scrolls straight to the analyzer. */
   const onAnalyzeCtaClick = useCallback(
     (e?: React.MouseEvent<HTMLElement>) => {
       e?.preventDefault();
       unlockIntentRef.current = "scroll";
-      if (isAnalyzeEntitledLocally()) {
-        scrollToAnalyzer();
-        return;
-      }
-      setPackageModalOpen(true);
+      grantLocalFreeUnlocked();
+      scrollToAnalyzer();
     },
     [scrollToAnalyzer],
   );
@@ -984,13 +951,9 @@ export default function DecisionStudio({
   }, [runAnalysis, scrollToAnalyzer]);
 
   const onPickFreePackage = useCallback(() => {
+    grantLocalFreeUnlocked();
     setPackageModalOpen(false);
-    if (isAnalyzeEntitledLocally()) {
-      continueAfterUnlock();
-      return;
-    }
-    setShareUnlockGoal("free");
-    setShareUnlockOpen(true);
+    continueAfterUnlock();
   }, [continueAfterUnlock]);
 
   const onPickPremiumPackage = useCallback(() => {
