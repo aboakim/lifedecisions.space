@@ -307,7 +307,7 @@ export default function SocialShareModal({
   }, [fullText, urls.viber]);
 
   const rowClass =
-    "inline-flex w-full items-center gap-3 rounded-xl border border-white/12 bg-white/[0.04] px-3 py-2.5 text-sm font-medium text-[rgb(var(--ink))] transition hover:border-white/22 hover:bg-white/[0.08]";
+    "inline-flex w-full items-center gap-3 rounded-xl border border-[rgb(var(--ink)/0.1)] bg-[rgb(var(--surface))] px-3 py-2.5 text-sm font-medium text-[rgb(var(--ink))] transition hover:border-[rgb(var(--ink)/0.18)] hover:bg-white";
 
   if (!open) return null;
 
@@ -323,10 +323,10 @@ export default function SocialShareModal({
         type="button"
         onClick={onClose}
         aria-label="Close share options"
-        className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"
+        className="absolute inset-0 bg-[rgb(28_30_36/0.45)] backdrop-blur-[2px]"
       />
       <div
-        className={`relative ${zPanel} flex max-h-[min(88vh,40rem)] w-full max-w-sm flex-col overflow-hidden rounded-3xl border border-white/15 bg-[rgb(var(--surface))]/95 p-4 shadow-2xl shadow-black/45`}
+        className={`relative ${zPanel} flex max-h-[min(88vh,40rem)] w-full max-w-sm flex-col overflow-hidden rounded-2xl border border-[rgb(var(--ink)/0.1)] bg-white p-4 shadow-[0_28px_80px_-28px_rgba(28,30,36,0.45)]`}
       >
         <div className="mb-3 flex shrink-0 items-start justify-between gap-2">
           <p className="text-sm font-semibold leading-snug text-[rgb(var(--ink))] [text-wrap:pretty]">

@@ -28,10 +28,10 @@ import NavRoutePrefetch from "@/components/NavRoutePrefetch";
 const LOCALE_KEY = "lde-locale";
 
 const navLinkClass =
-  "shrink-0 whitespace-nowrap rounded-xl px-2.5 py-2 text-[rgb(var(--ink-soft))] transition-all duration-200 hover:bg-white/[0.08] hover:text-[rgb(var(--ink))] hover:shadow-[0_0_24px_-10px_rgb(var(--page-accent,var(--accent))/0.28)] sm:px-3";
+  "shrink-0 whitespace-nowrap rounded-xl px-2.5 py-2 text-[rgb(var(--ink-soft))] transition-all duration-200 hover:bg-[rgb(var(--ink)/0.05)] hover:text-[rgb(var(--ink))] sm:px-3";
 
 const mobileNavLinkClass =
-  "block rounded-xl px-3 py-3.5 text-base font-medium text-[rgb(var(--ink))] transition hover:bg-white/[0.08] active:bg-white/[0.1]";
+  "block rounded-xl px-3 py-3.5 text-base font-medium text-[rgb(var(--ink))] transition hover:bg-[rgb(var(--ink)/0.05)] active:bg-[rgb(var(--ink)/0.08)]";
 
 function isNavActive(pathname: string, href: string): boolean {
   if (href === "/") return pathname === "/";
@@ -289,7 +289,7 @@ export default function GlobalNav() {
 
   return (
     <>
-      <header className="print:hidden relative sticky top-0 z-[60] isolate border-b border-white/[0.08] bg-[rgb(var(--surface))]/72 pt-[env(safe-area-inset-top,0px)] backdrop-blur-3xl shadow-[0_1px_0_0_rgba(255,255,255,0.06),0_10px_40px_-12px_rgba(0,0,0,0.4)]">
+      <header className="print:hidden relative sticky top-0 z-[60] isolate border-b border-[rgb(var(--ink)/0.08)] bg-[rgb(var(--surface))]/90 pt-[env(safe-area-inset-top,0px)] backdrop-blur-xl shadow-[0_8px_28px_-20px_rgba(28,30,36,0.2)]">
       <div
         className="site-header-edge site-header-edge--motion pointer-events-none absolute inset-x-0 bottom-0 z-10"
         aria-hidden
@@ -303,7 +303,7 @@ export default function GlobalNav() {
           onClick={() => setMobileOpen(false)}
         >
           <span
-            className="site-brand-mark hidden size-9 shrink-0 rounded-xl bg-gradient-to-br from-[rgb(var(--accent))] via-[rgb(var(--accent-2))] to-[rgb(var(--accent-magenta))] shadow-lg shadow-[rgb(var(--accent)/0.35)] sm:inline-block"
+            className="site-brand-mark hidden size-9 shrink-0 rounded-xl bg-[rgb(var(--accent))] shadow-[0_10px_24px_-12px_rgb(var(--accent)/0.55)] sm:inline-block"
             aria-hidden
           />
           <span className="min-w-0 truncate">{t.brand}</span>
@@ -356,7 +356,7 @@ export default function GlobalNav() {
           {/* Mobile menu toggle */}
           <button
             type="button"
-            className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-white/[0.14] bg-white/[0.06] text-[rgb(var(--ink))] transition hover:bg-white/[0.1] md:hidden"
+            className="flex size-11 shrink-0 items-center justify-center rounded-xl border border-[rgb(var(--ink)/0.12)] bg-white text-[rgb(var(--ink))] transition hover:bg-[rgb(var(--ink)/0.04)] md:hidden"
             aria-expanded={mobileOpen}
             aria-controls="global-mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}

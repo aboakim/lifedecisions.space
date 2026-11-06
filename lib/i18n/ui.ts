@@ -232,7 +232,7 @@ const trustHowEn: Pick<
   | "analyzingPhaseLines"
   | "socialProofRotator"
 > = {
-  heroRibbon: "Private · Clear paths · Experts optional",
+  heroRibbon: "Clear paths for real decisions",
   sectionNavOverview: "Overview",
   sectionNavFixes: "What it fixes",
   atAGlanceEyebrow: "What this does",
@@ -468,7 +468,7 @@ const trustHowHy: Pick<
   | "analyzingPhaseLines"
   | "socialProofRotator"
 > = {
-  heroRibbon: "Անվճար · Հստակ ուղիներ · Մասնագետ՝ ըստ ցանկության",
+  heroRibbon: "Հստակ ուղիներ իրական որոշումների համար",
   sectionNavOverview: "Ընդհանուր",
   sectionNavFixes: "Ինչ է լուծում",
   atAGlanceEyebrow: "Սկսիր այստեղից",

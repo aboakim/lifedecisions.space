@@ -3,25 +3,26 @@
 @tailwind utilities;
 
 /*
- * Design system v6 — dusk rose + amber.
- * Warm plum surfaces; rose and gold replace the old blue-green accents.
+ * Design system v7 — open daylight.
+ * Soft stone paper, charcoal type, ink + brass accents (no neon pink/teal).
  */
 :root {
-  --surface: 34 22 32;
-  --surface-2: 48 30 44;
-  --surface-elevated: 64 42 58;
-  --ink: 255 248 246;
-  --ink-soft: 240 220 214;
-  --accent: 244 122 148;
-  --accent-2: 242 176 104;
-  --accent-warm: 255 196 150;
-  --accent-coral: 255 140 128;
-  --accent-magenta: 214 150 196;
-  --accent-dim: 245 214 206;
-  --glow: 255 190 170;
-  --accent-sky: 232 160 176;
-  --accent-mint: 245 168 120;
-  --accent-sage: 232 148 136;
+  color-scheme: light;
+  --surface: 246 245 241;
+  --surface-2: 255 255 255;
+  --surface-elevated: 255 255 255;
+  --ink: 28 30 36;
+  --ink-soft: 86 90 102;
+  --accent: 42 74 120;
+  --accent-2: 168 112 58;
+  --accent-warm: 186 132 72;
+  --accent-coral: 168 96 88;
+  --accent-magenta: 108 96 128;
+  --accent-dim: 70 92 124;
+  --glow: 42 74 120;
+  --accent-sky: 112 142 172;
+  --accent-mint: 96 124 116;
+  --accent-sage: 120 132 116;
   /* GlobalNav height — keep section nav flush under header when sticky */
   --site-header-height: 3.25rem;
   --home-section-nav-height: 3rem;
@@ -62,25 +63,11 @@ body {
   color: rgb(var(--ink));
   background-color: rgb(var(--surface));
   background-image:
-    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.045) 1px, transparent 0),
-    radial-gradient(ellipse 980px 620px at 8% 88%, rgb(var(--accent) / 0.18), transparent 55%),
-    radial-gradient(ellipse 900px 520px at 2% 24%, rgb(var(--accent-2) / 0.12), transparent 54%),
-    radial-gradient(ellipse 1000px 540px at 88% 4%, rgb(var(--accent-magenta) / 0.14), transparent 58%),
-    radial-gradient(ellipse 720px 500px at 48% 108%, rgb(var(--accent-coral) / 0.1), transparent 52%),
-    radial-gradient(ellipse 820px 560px at 78% 94%, rgb(var(--accent-warm) / 0.1), transparent 52%),
-    radial-gradient(ellipse 680px 440px at 10% 90%, rgb(var(--accent-2) / 0.08), transparent 54%),
-    radial-gradient(ellipse 640px 480px at 52% -8%, rgb(var(--accent) / 0.1), transparent 55%),
-    linear-gradient(172deg, rgb(28 16 28) 0%, rgb(42 24 40) 38%, rgb(36 22 36) 68%, rgb(24 14 24) 100%);
-  background-size:
-    32px 32px,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto,
-    auto;
+    radial-gradient(ellipse 900px 560px at 12% 0%, rgb(var(--accent) / 0.07), transparent 55%),
+    radial-gradient(ellipse 820px 520px at 92% 8%, rgb(var(--accent-2) / 0.08), transparent 52%),
+    radial-gradient(ellipse 740px 480px at 50% 100%, rgb(var(--accent-sky) / 0.06), transparent 55%),
+    linear-gradient(180deg, rgb(250 249 246) 0%, rgb(246 245 241) 45%, rgb(242 241 236) 100%);
+  background-size: auto, auto, auto, auto;
   text-rendering: optimizeLegibility;
 }
 
@@ -122,11 +109,11 @@ body:has(.home-section-nav-shell) .site-header-edge {
 .home-section-nav {
   position: relative;
   min-height: var(--home-section-nav-height);
-  border-top: 1px solid rgb(255 255 255 / 0.06);
-  border-bottom: 1px solid rgb(255 255 255 / 0.08);
-  background: rgb(var(--surface) / 0.72);
-  backdrop-filter: blur(24px);
-  box-shadow: 0 10px 40px -12px rgb(0 0 0 / 0.4);
+  border-top: 1px solid rgb(var(--ink) / 0.06);
+  border-bottom: 1px solid rgb(var(--ink) / 0.08);
+  background: rgb(var(--surface) / 0.9);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 8px 28px -18px rgb(28 30 36 / 0.18);
 }
 
 .home-section-nav::after {
@@ -168,24 +155,22 @@ body::before {
 }
 
 ::selection {
-  background: rgb(130 205 195 / 0.36);
+  background: rgb(var(--accent) / 0.18);
   color: rgb(var(--ink));
 }
 
 .glass {
-  @apply border border-white/[0.11] bg-white/[0.065] shadow-[0_0_0_1px_rgba(255,255,255,0.07)_inset,0_24px_64px_-32px_rgba(0,0,0,0.45)] backdrop-blur-2xl backdrop-saturate-150;
+  @apply border border-[rgb(var(--ink)/0.1)] bg-white/80 shadow-[0_18px_48px_-28px_rgba(28,30,36,0.28)] backdrop-blur-xl;
 }
 
 .card-glow {
   box-shadow:
-    0 0 0 1px rgb(255 255 255 / 0.08) inset,
-    0 40px 120px -48px rgb(186 150 255 / 0.42),
-    0 28px 80px -40px rgb(78 228 208 / 0.18),
-    0 16px 48px -28px rgb(250 175 255 / 0.14);
+    0 0 0 1px rgb(var(--ink) / 0.06),
+    0 28px 64px -36px rgb(var(--accent) / 0.22);
 }
 
 .panel-hero {
-  @apply relative overflow-hidden rounded-[1.75rem] border border-white/[0.11] bg-gradient-to-br from-white/[0.11] via-white/[0.05] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.07)_inset,0_32px_80px_-40px_rgba(0,0,0,0.5)] backdrop-blur-2xl backdrop-saturate-150 sm:p-8;
+  @apply relative overflow-hidden rounded-[1.5rem] border border-[rgb(var(--ink)/0.1)] bg-white p-6 shadow-[0_24px_60px_-36px_rgba(28,30,36,0.22)] sm:p-8;
 }
 
 .panel-hero::before {
@@ -212,19 +197,19 @@ body::before {
 }
 
 .trust-card {
-  @apply rounded-2xl border border-white/[0.1] bg-gradient-to-b from-white/[0.09] to-white/[0.03] p-4 shadow-lg ring-1 ring-white/[0.04] transition duration-200 hover:border-[rgb(var(--accent))]/45 hover:shadow-[0_22px_56px_-22px_rgb(var(--accent)/0.4)] sm:p-5;
+  @apply rounded-2xl border border-[rgb(var(--ink)/0.1)] bg-white p-4 shadow-[0_16px_40px_-28px_rgba(28,30,36,0.2)] transition duration-200 hover:border-[rgb(var(--accent))]/35 hover:shadow-[0_22px_48px_-28px_rgb(var(--accent)/0.22)] sm:p-5;
 }
 
 .step-card {
-  @apply relative rounded-2xl border border-white/[0.12] bg-white/[0.06] px-4 py-4 sm:px-5 sm:py-5;
+  @apply relative rounded-2xl border border-[rgb(var(--ink)/0.1)] bg-white px-4 py-4 sm:px-5 sm:py-5;
 }
 
 .step-num {
-  @apply mb-2 inline-flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-[rgb(var(--accent))]/35 to-[rgb(var(--accent-2))]/25 text-xs font-bold text-white shadow-inner;
+  @apply mb-2 inline-flex size-8 items-center justify-center rounded-xl bg-[rgb(var(--accent))]/12 text-xs font-bold text-[rgb(var(--accent))];
 }
 
 .text-gradient {
-  @apply bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-2))] to-[rgb(var(--accent-sage))] bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-[rgb(var(--accent))] via-[rgb(var(--accent-2))] to-[rgb(var(--accent))] bg-clip-text text-transparent;
 }
 
 .score-ring {
@@ -445,39 +430,33 @@ body::before {
 .home-hero-video-shell__media,
 .home-hero-carousel-shell__track {
   isolation: isolate;
-  background-color: rgb(20 18 38);
+  background-color: rgb(var(--surface));
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 .home-hero-video-shell__media video,
 .home-hero-video-shell__video {
-  background-color: rgb(20 18 38);
+  background-color: rgb(var(--surface));
   opacity: 1;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
 .home-hero-carousel-shell__slide {
-  background-color: rgb(20 18 38);
+  background-color: rgb(var(--surface));
 }
 
-/*
- * Mobile: remove sage/mint/teal from page mesh and section washes so iOS never
- * tints the hero video during scroll. Desktop keeps the full “dawn lavender” palette.
- */
 @media (max-width: 767px) {
   body {
     background-color: rgb(var(--surface));
     background-image:
-      radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.04) 1px, transparent 0),
-      radial-gradient(ellipse 920px 560px at 86% 6%, rgb(var(--accent) / 0.14), transparent 58%),
-      radial-gradient(ellipse 760px 480px at 10% 94%, rgb(var(--accent-magenta) / 0.09), transparent 54%),
-      linear-gradient(172deg, rgb(28 16 28) 0%, rgb(42 24 40) 42%, rgb(24 14 24) 100%);
-    background-size: 32px 32px, auto, auto, auto;
+      radial-gradient(ellipse 820px 480px at 88% 4%, rgb(var(--accent) / 0.06), transparent 58%),
+      linear-gradient(180deg, rgb(250 249 246) 0%, rgb(246 245 241) 100%);
+    background-size: auto, auto;
   }
 
   .home-section-nav {
-    background: rgb(var(--surface) / 0.72);
-    backdrop-filter: blur(24px);
+    background: rgb(var(--surface) / 0.9);
+    backdrop-filter: blur(18px);
   }
 
   .home-section-wash {
@@ -485,85 +464,8 @@ body::before {
     --wash-color: transparent;
   }
 
-  .home-hero-panel {
-    background-color: rgb(var(--surface-2)) !important;
-    background-image: none !important;
-  }
   .home-hero-panel__tint {
     display: none;
-  }
-
-  .home-hero-media-column {
-    position: relative;
-    isolation: isolate;
-    background-color: rgb(var(--surface-2));
-    border-radius: 1rem;
-  }
-  .home-hero-media-column::before {
-    content: "";
-    position: absolute;
-    inset: -10px;
-    z-index: -1;
-    border-radius: 1.15rem;
-    background: rgb(var(--surface-2));
-  }
-
-  .home-hero-video-shell,
-  .home-hero-carousel-shell {
-    overflow: clip;
-    box-shadow: 0 10px 28px -14px rgb(0 0 0 / 0.55) !important;
-  }
-  .home-hero-video-shell__media {
-    contain: paint;
-  }
-  .home-hero-video-shell__caption-scrim {
-    display: none;
-  }
-  .home-hero-video-shell__caption {
-    background-color: rgb(20 18 38 / 0.94);
-    text-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
-  }
-
-  .home-hero-check {
-    background-color: rgb(255 255 255 / 0.1) !important;
-    color: rgb(255 255 255 / 0.85) !important;
-    --tw-ring-color: rgb(255 255 255 / 0.14) !important;
-  }
-
-  /*
-   * Hero copy column (2nd screenshot): teal came from accent-2/sage in headline
-   * gradient, ribbon, CTA, and translucent panel — not the video.
-   */
-  .home-hero-copy {
-    isolation: isolate;
-  }
-  .home-hero-panel .text-gradient {
-    background-image: linear-gradient(
-      90deg,
-      rgb(var(--accent)) 0%,
-      rgb(var(--accent-magenta)) 52%,
-      rgb(var(--accent-dim)) 100%
-    ) !important;
-  }
-  .home-hero-ribbon {
-    color: rgb(var(--accent-dim)) !important;
-  }
-  .home-hero-ribbon .size-2,
-  .home-hero-ribbon .size-2\.5 {
-    background-color: rgb(var(--accent-magenta)) !important;
-    box-shadow: 0 0 10px rgb(var(--accent-magenta) / 0.45) !important;
-  }
-  p.home-hero-ribbon {
-    color: rgb(var(--accent-dim)) !important;
-  }
-  .home-hero-cta {
-    background-image: linear-gradient(
-      90deg,
-      rgb(var(--accent)) 0%,
-      rgb(var(--accent-magenta)) 50%,
-      rgb(var(--accent)) 100%
-    ) !important;
-    box-shadow: 0 14px 36px -18px rgb(0 0 0 / 0.5) !important;
   }
 
   .lattice-sheen-layer {
@@ -571,25 +473,25 @@ body::before {
   }
 }
 .home-section-wash--overview {
-  --wash-color: rgb(244 122 148 / 0.14);
+  --wash-color: rgb(var(--accent) / 0.06);
 }
 .home-section-wash--product {
-  --wash-color: rgb(255 152 168 / 0.11);
+  --wash-color: rgb(var(--accent-2) / 0.07);
 }
 .home-section-wash--trust {
-  --wash-color: rgb(242 176 104 / 0.12);
+  --wash-color: rgb(var(--accent-warm) / 0.08);
 }
 .home-section-wash--how {
-  --wash-color: rgb(214 150 196 / 0.12);
+  --wash-color: rgb(var(--accent-sky) / 0.07);
 }
 .home-section-wash--language {
-  --wash-color: rgb(var(--accent-2) / 0.13);
+  --wash-color: rgb(var(--accent-2) / 0.08);
 }
 .home-section-wash--workspace {
-  --wash-color: rgb(244 122 148 / 0.12);
+  --wash-color: rgb(var(--accent) / 0.06);
 }
 .home-section-wash--privacy {
-  --wash-color: rgb(242 176 104 / 0.11);
+  --wash-color: rgb(var(--accent-mint) / 0.07);
 }
 .home-section-wash--results {
   --wash-color: rgb(var(--accent-sage) / 0.12);
@@ -1128,15 +1030,13 @@ html[data-page-theme="trust"] .site-brand-mark {
     0%,
     100% {
       box-shadow:
-        0 0 0 1px rgb(244 122 148 / 0.4),
-        0 28px 80px -40px rgb(244 122 148 / 0.55),
-        0 0 48px -12px rgb(242 176 104 / 0.35);
+        0 0 0 1px rgb(var(--ink) / 0.08),
+        0 24px 56px -32px rgb(var(--accent) / 0.28);
     }
     50% {
       box-shadow:
-        0 0 0 1px rgb(242 176 104 / 0.5),
-        0 32px 90px -36px rgb(244 122 148 / 0.7),
-        0 0 64px -8px rgb(214 150 196 / 0.4);
+        0 0 0 1px rgb(var(--accent) / 0.18),
+        0 28px 64px -30px rgb(var(--accent) / 0.36);
     }
   }
   @keyframes experts-recruit-shimmer {
