@@ -232,8 +232,7 @@ const trustHowEn: Pick<
   | "analyzingPhaseLines"
   | "socialProofRotator"
 > = {
-  heroRibbon:
-    "Private session · Structured scenarios · Experts optional",
+  heroRibbon: "Private · Clear paths · Experts optional",
   sectionNavOverview: "Overview",
   sectionNavFixes: "What it fixes",
   atAGlanceEyebrow: "What this does",
@@ -241,15 +240,15 @@ const trustHowEn: Pick<
   atAGlanceCards: [
     {
       title: "See real outcomes",
-      body: "We map your options from six months to five years ahead—not vibes, paths.",
+      body: "Options from 6 months to 5 years.",
     },
     {
       title: "Quit the spiral",
-      body: "Hours (or days) of overthinking collapse into one structured pass.",
+      body: "One pass instead of hours of looping.",
     },
     {
       title: "Walk away clear",
-      body: "Plain-language answers you can act on—therapy and legal pros stay optional.",
+      body: "A short answer you can act on.",
     },
   ],
   trustMicroPoints: [
@@ -299,16 +298,16 @@ const trustHowEn: Pick<
   howSectionTitle: "How it works",
   howSteps: [
     {
-      title: "Describe the decision in your own words",
-      body: "Write or speak what you are weighing—stakes, fears, money, people involved, and any deadline. No polished essay required.",
+      title: "Write the decision",
+      body: "One question. Add stakes if you want.",
     },
     {
-      title: "See best, likely, and worst paths together",
-      body: "The engine compares options on money, emotional load, risk, and upside—mapped from six months to five years out.",
+      title: "Compare the paths",
+      body: "Best, likely, and worst — side by side.",
     },
     {
-      title: "Walk away with a report you can use",
-      body: "Scenarios, timeline, and a clarity score you can copy for therapy, legal review, a partner talk, or your own notes.",
+      title: "Leave with a report",
+      body: "Score, timeline, and a short summary.",
     },
   ],
   sectionNavProduct: "Product",
@@ -469,8 +468,7 @@ const trustHowHy: Pick<
   | "analyzingPhaseLines"
   | "socialProofRotator"
 > = {
-  heroRibbon:
-    "Անվճար կառուցված վերլուծիչ · Մասնագետների ցանց · Գաղտնիության առաջնահերթություն",
+  heroRibbon: "Անվճար · Հստակ ուղիներ · Մասնագետ՝ ըստ ցանկության",
   sectionNavOverview: "Ընդհանուր",
   sectionNavFixes: "Ինչ է լուծում",
   atAGlanceEyebrow: "Սկսիր այստեղից",
@@ -478,15 +476,15 @@ const trustHowHy: Pick<
   atAGlanceCards: [
     {
       title: "Մուտքագրիր հարցդ",
-      body: "Մեկ հստակ հարց, կամաց ավելացրու կոնտեքստ և արժեքներ։",
+      body: "Մեկ հարց։ Կոնտեքստը՝ ըստ ցանկության։",
     },
     {
       title: "Համեմատիր սցենարները",
-      body: "Լավագույն, վատ և հավանական ուղիներ՝ փոխարժեքներով կողք կողքի։",
+      body: "Լավ, հավանական և վատ ուղի՝ կողք կողքի։",
     },
     {
       title: "Ստացիր հստակ ելք",
-      body: "Միավոր, ժամանակացույց, չորս հարթակ․ մասնագետ՝ միայն եթե ուզում ես։",
+      body: "Միավոր, ժամանակացույց, կարճ ամփոփում։",
     },
   ],
   trustMicroPoints: [
@@ -536,16 +534,16 @@ const trustHowHy: Pick<
   howSectionTitle: "Ինչպես է աշխատում",
   howSteps: [
     {
-      title: "Նկարագրեք որոշումը ձեր բառերով",
-      body: "Գրեք կամ ասեք, թե ինչ եք կշռում՝ դրամ, վախ, մարդիկ, ժամկետ։ Կատարյալ տեքստ պետք չէ։",
+      title: "Գրիր որոշումը",
+      body: "Մեկ հարց։ Մանրամասները՝ ըստ ցանկության։",
     },
     {
-      title: "Տեսեք լավ, հավանական և վատ ուղիները միասին",
-      body: "Շարժիչը համեմատում է տարբերակները՝ գումար, էմոցիա, ռիսկ, հնարավորություն՝ 6 ամիսից մինչև 5 տարի։",
+      title: "Համեմատիր ուղիները",
+      body: "Լավ, հավանական և վատ՝ կողք կողքի։",
     },
     {
-      title: "Ստացեք հաշվետվություն, որ կարող եք օգտագործել",
-      body: "Սցենարներ, ժամանակացույց և միավոր՝ պատճենելու թերապևտի, փաստաբանի, զրույցի կամ նոթերի համար։",
+      title: "Ստացիր հաշվետվություն",
+      body: "Միավոր, ժամանակացույց, կարճ ամփոփում։",
     },
   ],
   sectionNavProduct: "Արտադրանք",
@@ -645,8 +643,7 @@ const uiHy: Partial<UIStrings> = {
   brand: "Կյանքի որոշումների AI",
   heroLine1: "Կայացրո՛ր լավ կյանքի որոշումներ",
   heroAccent: "րոպեների մեջ",
-  subtitle:
-    "Համեմատի՛ր տարբերակները, տե՛ս արդյունքները, հստա՛ր որոշի՛ր. կառուցված վերլուծություն, ոչ պատահական chat։",
+  subtitle: "Համեմատիր տարբերակները և ստացիր հստակ պատասխան։",
   disclaimerTitle: "Պարտադիր հիշեցում",
   disclaimerBody:
     "Այս գործիքը աջակցություն է, ոչ թե վերջնական իշխանություն։ Ճգնաժամային իրավիճակներում դիմեք մասնագետի։ Սա բժշկական, իրավական կամ թերապևտիկ խորհուրդ չէ։",
@@ -775,8 +772,7 @@ const uiEn: Partial<UIStrings> = {
   brand: "Life Decision Engine",
   heroLine1: "Stop overthinking.",
   heroAccent: "Decide in seconds.",
-  subtitle:
-    "Get instant clarity on any decision using AI-powered scenarios—not random chat.",
+  subtitle: "Compare options and get a clear answer.",
   disclaimerTitle: "Important",
   disclaimerBody:
     "This is a support tool—not final authority. In a crisis, contact a professional. Not medical, legal, or therapeutic advice.",

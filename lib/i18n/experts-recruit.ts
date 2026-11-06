@@ -13,7 +13,7 @@ export type ExpertsRecruitCopy = {
 const hy: ExpertsRecruitCopy = {
   eyebrow: "Մասնագետների համար",
   title: "Նոր ավարտա՞ծ ես, թե՞ արդեն փորձառու — այստեղ քեզ կգտնեն",
-  body: "Սա հարթակ է, որտեղ մարդիկ փնտրում են հոգեբան, իրավաբան, ֆինանսիստ, կոուչ և այլ մասնագետներ։ Գրանցվիր կայքում, որ կարողանան կապ հաստատել քեզ հետ, և կիսվիր ընկերներիդ հետ՝ որպեսզի ավելի շատ մարդ իմանա քո մասին։",
+  body: "Գրանցվիր՝ հոգեբան, իրավաբան, ֆինանսիստ կամ կոուչ։ Մարդիկ կգտնեն քեզ և կկապվեն։",
   ctaRegister: "Գրանցվել որպես էքսպերտ",
   ctaShare: "Կիսվել ընկերներիդ հետ",
   shareCopied: "Հղումը պատճենվեց — ուղարկիր ընկերներիդ։",
@@ -24,7 +24,7 @@ const hy: ExpertsRecruitCopy = {
 const en: ExpertsRecruitCopy = {
   eyebrow: "For professionals",
   title: "New graduate or seasoned expert — this is where people find you",
-  body: "A platform where people look for psychologists, lawyers, planners, coaches, and more. Register so clients can reach you, then share with friends so more people discover your profile.",
+  body: "Register as a psychologist, lawyer, planner, or coach. People find you and get in touch.",
   ctaRegister: "Register as an expert",
   ctaShare: "Share with friends",
   shareCopied: "Link copied — send it to your friends.",

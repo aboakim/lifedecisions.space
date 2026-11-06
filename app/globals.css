@@ -3,29 +3,25 @@
 @tailwind utilities;
 
 /*
- * Design system v5 — “dawn lavender” + open sage
- * Less dominant violet in the mesh; soft green (sage / mint) balances the UI.
+ * Design system v6 — dusk rose + amber.
+ * Warm plum surfaces; rose and gold replace the old blue-green accents.
  */
 :root {
-  --surface: 46 52 84;
-  --surface-2: 56 62 98;
-  --surface-elevated: 68 74 110;
-  --ink: 252 251 255;
-  /* Brighter muted text — WCAG AA on tinted panels vs prior lavender-gray */
-  --ink-soft: 226 232 246;
-  /* Periwinkle — less saturated violet than before */
-  --accent: 154 158 255;
-  --accent-2: 72 224 188;
-  --accent-warm: 255 206 160;
-  --accent-coral: 255 148 198;
-  --accent-magenta: 226 198 248;
-  --accent-dim: 200 212 252;
-  --glow: 198 210 255;
-  /* Extra mesh hues (body / orbs / washes) */
-  --accent-sky: 118 196 255;
-  --accent-mint: 108 232 200;
-  /* Open, airy sage — pairs with mint for green presence */
-  --accent-sage: 132 218 178;
+  --surface: 34 22 32;
+  --surface-2: 48 30 44;
+  --surface-elevated: 64 42 58;
+  --ink: 255 248 246;
+  --ink-soft: 240 220 214;
+  --accent: 244 122 148;
+  --accent-2: 242 176 104;
+  --accent-warm: 255 196 150;
+  --accent-coral: 255 140 128;
+  --accent-magenta: 214 150 196;
+  --accent-dim: 245 214 206;
+  --glow: 255 190 170;
+  --accent-sky: 232 160 176;
+  --accent-mint: 245 168 120;
+  --accent-sage: 232 148 136;
   /* GlobalNav height — keep section nav flush under header when sticky */
   --site-header-height: 3.25rem;
   --home-section-nav-height: 3rem;
@@ -65,17 +61,16 @@ body {
   @apply min-h-screen antialiased;
   color: rgb(var(--ink));
   background-color: rgb(var(--surface));
-  /* Mesh: sage + mint forward; violet / magenta eased back */
   background-image:
-    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.055) 1px, transparent 0),
-    radial-gradient(ellipse 980px 620px at 8% 88%, rgb(var(--accent-sage) / 0.2), transparent 55%),
-    radial-gradient(ellipse 900px 520px at 2% 24%, rgb(var(--accent-mint) / 0.16), transparent 54%),
-    radial-gradient(ellipse 1000px 540px at 88% 4%, rgb(var(--accent) / 0.16), transparent 58%),
-    radial-gradient(ellipse 720px 500px at 48% 108%, rgb(var(--accent-coral) / 0.09), transparent 52%),
-    radial-gradient(ellipse 820px 560px at 78% 94%, rgb(var(--accent-magenta) / 0.09), transparent 52%),
-    radial-gradient(ellipse 680px 440px at 10% 90%, rgb(var(--accent-warm) / 0.1), transparent 54%),
-    radial-gradient(ellipse 640px 480px at 52% -8%, rgb(var(--accent-sky) / 0.11), transparent 55%),
-    linear-gradient(172deg, rgb(42 50 80) 0%, rgb(52 58 94) 38%, rgb(48 56 88) 68%, rgb(40 48 74) 100%);
+    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.045) 1px, transparent 0),
+    radial-gradient(ellipse 980px 620px at 8% 88%, rgb(var(--accent) / 0.18), transparent 55%),
+    radial-gradient(ellipse 900px 520px at 2% 24%, rgb(var(--accent-2) / 0.12), transparent 54%),
+    radial-gradient(ellipse 1000px 540px at 88% 4%, rgb(var(--accent-magenta) / 0.14), transparent 58%),
+    radial-gradient(ellipse 720px 500px at 48% 108%, rgb(var(--accent-coral) / 0.1), transparent 52%),
+    radial-gradient(ellipse 820px 560px at 78% 94%, rgb(var(--accent-warm) / 0.1), transparent 52%),
+    radial-gradient(ellipse 680px 440px at 10% 90%, rgb(var(--accent-2) / 0.08), transparent 54%),
+    radial-gradient(ellipse 640px 480px at 52% -8%, rgb(var(--accent) / 0.1), transparent 55%),
+    linear-gradient(172deg, rgb(28 16 28) 0%, rgb(42 24 40) 38%, rgb(36 22 36) 68%, rgb(24 14 24) 100%);
   background-size:
     32px 32px,
     auto,
@@ -476,7 +471,7 @@ body::before {
       radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.04) 1px, transparent 0),
       radial-gradient(ellipse 920px 560px at 86% 6%, rgb(var(--accent) / 0.14), transparent 58%),
       radial-gradient(ellipse 760px 480px at 10% 94%, rgb(var(--accent-magenta) / 0.09), transparent 54%),
-      linear-gradient(172deg, rgb(42 50 80) 0%, rgb(52 58 94) 42%, rgb(40 48 74) 100%);
+      linear-gradient(172deg, rgb(28 16 28) 0%, rgb(42 24 40) 42%, rgb(24 14 24) 100%);
     background-size: 32px 32px, auto, auto, auto;
   }
 
@@ -576,25 +571,25 @@ body::before {
   }
 }
 .home-section-wash--overview {
-  --wash-color: rgb(68 224 205 / 0.14);
+  --wash-color: rgb(244 122 148 / 0.14);
 }
 .home-section-wash--product {
-  --wash-color: rgb(255 152 198 / 0.11);
+  --wash-color: rgb(255 152 168 / 0.11);
 }
 .home-section-wash--trust {
-  --wash-color: rgb(255 212 150 / 0.12);
+  --wash-color: rgb(242 176 104 / 0.12);
 }
 .home-section-wash--how {
-  --wash-color: rgb(122 198 255 / 0.12);
+  --wash-color: rgb(214 150 196 / 0.12);
 }
 .home-section-wash--language {
-  --wash-color: rgb(var(--accent-mint) / 0.13);
+  --wash-color: rgb(var(--accent-2) / 0.13);
 }
 .home-section-wash--workspace {
-  --wash-color: rgb(108 214 255 / 0.12);
+  --wash-color: rgb(244 122 148 / 0.12);
 }
 .home-section-wash--privacy {
-  --wash-color: rgb(86 220 180 / 0.11);
+  --wash-color: rgb(242 176 104 / 0.11);
 }
 .home-section-wash--results {
   --wash-color: rgb(var(--accent-sage) / 0.12);
@@ -1133,15 +1128,15 @@ html[data-page-theme="trust"] .site-brand-mark {
     0%,
     100% {
       box-shadow:
-        0 0 0 1px rgb(34 211 238 / 0.35),
-        0 28px 80px -40px rgb(34 211 238 / 0.65),
-        0 0 48px -12px rgb(124 92 255 / 0.35);
+        0 0 0 1px rgb(244 122 148 / 0.4),
+        0 28px 80px -40px rgb(244 122 148 / 0.55),
+        0 0 48px -12px rgb(242 176 104 / 0.35);
     }
     50% {
       box-shadow:
-        0 0 0 1px rgb(34 211 238 / 0.55),
-        0 32px 90px -36px rgb(34 211 238 / 0.85),
-        0 0 64px -8px rgb(236 72 153 / 0.4);
+        0 0 0 1px rgb(242 176 104 / 0.5),
+        0 32px 90px -36px rgb(244 122 148 / 0.7),
+        0 0 64px -8px rgb(214 150 196 / 0.4);
     }
   }
   @keyframes experts-recruit-shimmer {
