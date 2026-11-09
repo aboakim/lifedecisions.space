@@ -36,7 +36,7 @@ export default function HomeHeroStatic({ locale: localeProp }: Props = {}) {
     >
       <section
         id="section-hero"
-        className="home-hero-panel relative overflow-hidden bg-[rgb(246_245_241)]"
+        className="home-hero-panel relative overflow-hidden bg-[rgb(var(--surface))]"
         aria-labelledby="home-hero-heading"
       >
         <div className="absolute inset-0 z-0" aria-hidden>
@@ -60,15 +60,15 @@ export default function HomeHeroStatic({ locale: localeProp }: Props = {}) {
           />
           {/* Opaque left reading plane — video only peeks on the right */}
           <div
-            className="absolute inset-y-0 start-0 w-[min(100%,38rem)] bg-[rgb(246_245_241)] max-md:w-[72%] lg:w-[min(100%,42rem)]"
+            className="absolute inset-y-0 start-0 w-[min(100%,38rem)] bg-[rgb(var(--surface))] max-md:w-[72%] lg:w-[min(100%,42rem)]"
           />
           <div
-            className="absolute inset-y-0 start-0 w-[min(100%,48rem)] bg-gradient-to-r from-[rgb(246_245_241)] from-55% via-[rgb(246_245_241/0.92)] via-75% to-transparent max-md:w-full max-md:from-70% max-md:via-[rgb(246_245_241/0.88)] lg:w-[min(100%,54rem)]"
+            className="absolute inset-y-0 start-0 w-[min(100%,48rem)] bg-gradient-to-r from-[rgb(var(--surface))] from-55% via-[rgb(var(--surface)/0.92)] via-75% to-transparent max-md:w-full max-md:from-70% max-md:via-[rgb(var(--surface)/0.88)] lg:w-[min(100%,54rem)]"
           />
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[min(72vh,36rem)] max-w-6xl flex-col justify-center px-4 py-14 sm:px-6 sm:py-16 lg:py-20">
-          <div className="home-hero-copy max-w-xl rounded-2xl bg-[rgb(246_245_241)]/95 p-1 max-md:bg-[rgb(246_245_241)] sm:p-0">
+          <div className="home-hero-copy max-w-xl rounded-2xl bg-[rgb(var(--surface)/0.96)] p-1 max-md:bg-[rgb(var(--surface))] sm:p-0">
             <p className="font-display text-sm font-semibold tracking-tight text-[#1c1e24] sm:text-base">
               {t.brand}
             </p>

@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 /*
- * Design system v7 — open daylight.
- * Soft stone paper, charcoal type, ink + brass accents (no neon pink/teal).
+ * Design system v8 — soft daylight wash.
+ * Pale mist base (not stark white) with gentle sky / sand / sage tints.
  */
 :root {
   color-scheme: light;
-  --surface: 246 245 241;
-  --surface-2: 255 255 255;
+  --surface: 232 238 246;
+  --surface-2: 248 250 253;
   --surface-elevated: 255 255 255;
   --ink: 28 30 36;
   --ink-soft: 86 90 102;
@@ -20,9 +20,9 @@
   --accent-magenta: 108 96 128;
   --accent-dim: 70 92 124;
   --glow: 42 74 120;
-  --accent-sky: 112 142 172;
-  --accent-mint: 96 124 116;
-  --accent-sage: 120 132 116;
+  --accent-sky: 130 168 210;
+  --accent-mint: 120 168 152;
+  --accent-sage: 148 168 148;
   /* GlobalNav height — keep section nav flush under header when sticky */
   --site-header-height: 3.25rem;
   --home-section-nav-height: 3rem;
@@ -63,11 +63,18 @@ body {
   color: rgb(var(--ink));
   background-color: rgb(var(--surface));
   background-image:
-    radial-gradient(ellipse 900px 560px at 12% 0%, rgb(var(--accent) / 0.07), transparent 55%),
-    radial-gradient(ellipse 820px 520px at 92% 8%, rgb(var(--accent-2) / 0.08), transparent 52%),
-    radial-gradient(ellipse 740px 480px at 50% 100%, rgb(var(--accent-sky) / 0.06), transparent 55%),
-    linear-gradient(180deg, rgb(250 249 246) 0%, rgb(246 245 241) 45%, rgb(242 241 236) 100%);
-  background-size: auto, auto, auto, auto;
+    radial-gradient(ellipse 980px 620px at 8% -4%, rgb(var(--accent-sky) / 0.28), transparent 58%),
+    radial-gradient(ellipse 860px 560px at 96% 6%, rgb(var(--accent-warm) / 0.16), transparent 54%),
+    radial-gradient(ellipse 780px 520px at 48% 108%, rgb(var(--accent-mint) / 0.18), transparent 56%),
+    radial-gradient(ellipse 640px 420px at 72% 42%, rgb(var(--accent-magenta) / 0.08), transparent 60%),
+    linear-gradient(
+      175deg,
+      rgb(236 244 252) 0%,
+      rgb(232 238 246) 38%,
+      rgb(238 242 236) 72%,
+      rgb(244 240 234) 100%
+    );
+  background-size: auto, auto, auto, auto, auto;
   text-rendering: optimizeLegibility;
 }
 
@@ -510,9 +517,10 @@ body::before {
   body {
     background-color: rgb(var(--surface));
     background-image:
-      radial-gradient(ellipse 820px 480px at 88% 4%, rgb(var(--accent) / 0.06), transparent 58%),
-      linear-gradient(180deg, rgb(250 249 246) 0%, rgb(246 245 241) 100%);
-    background-size: auto, auto;
+      radial-gradient(ellipse 820px 480px at 88% 4%, rgb(var(--accent-sky) / 0.22), transparent 58%),
+      radial-gradient(ellipse 680px 420px at 8% 96%, rgb(var(--accent-warm) / 0.12), transparent 55%),
+      linear-gradient(180deg, rgb(236 244 252) 0%, rgb(232 238 246) 55%, rgb(240 242 236) 100%);
+    background-size: auto, auto, auto;
   }
 
   .home-section-nav {
